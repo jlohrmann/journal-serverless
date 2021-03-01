@@ -4,14 +4,14 @@ To implement this project, you need to implement a simple Journal application us
 
 # Functionality of the application
 
-This application will allow creating/removing/updating/fetching Journal Entry items. Each Entry item can optionally have an attachment image. Each user only has access to Journal Entries that he/she has created.
+This application will allow creating/removing/updating/fetching Journal Entry items. Each Entry item can optionally have an attachment image. Each user only has access to Journal Entries that he/she has created. Published entries will be available outside of this application and are beyond the scope of this application.  ReviewByDate is automatically set at this time for  7 days from entry. Future releases will allow user to select review by date and will highlight journal entries past due for review.  
 
 # Entries 
 
 The application should store Journal Entries, and each Entry item contains the following fields:
 
 * `userId` (string) - a unique id for a user 
-* `entryId` (string) - a unique id for an item
+* `entryId` (string) - a unique id for an entry item
 * `createdAt` (string) - date and time when an item was created
 * `entry` (string) - journal entry (e.g. "Today I ate cheese")
 * `reviewByDate` (string) - date and time by which an item should be reviewed for publishing 

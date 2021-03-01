@@ -24,9 +24,9 @@ export async function createEntry(
     entryId: entryId,
     userId: userId,
     createdAt: new Date().toISOString(),
-    name: createEntryRequest.name,
-    dueDate: createEntryRequest.dueDate,
-    done: false,
+    entry: createEntryRequest.entry,
+    reviewByDate: createEntryRequest.reviewByDate,
+    readyToPublish: false,
     attachmentUrl: '',
     timestamp: new Date().toISOString()
   })
@@ -44,9 +44,9 @@ export async function updateEntry(
     userId: userId,
     entryId: updateEntryId,
     createdAt: new Date().toISOString(),
-    name: updateEntryRequest.name,
-    dueDate: updateEntryRequest.dueDate,
-    done: true,
+    entry: updateEntryRequest.entry,
+    reviewByDate: updateEntryRequest.reviewByDate,
+    readyToPublish: true,
     attachmentUrl: '',
     timestamp: new Date().toISOString()
   })
