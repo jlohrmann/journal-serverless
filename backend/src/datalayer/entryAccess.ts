@@ -59,8 +59,8 @@ export class EntryAccess {
                     userId: entry.userId, 
                     entryId: entry.entryId 
             },
-            UpdateExpression: "set #name = :a, done = :b, dueDate = :c",
-            ExpressionAttributeNames: {'#name' : 'name'},
+            UpdateExpression: "set #entryText = :a, readyToPublish = :b, reviewByDate = :c",
+            ExpressionAttributeNames: {'#entryText' : 'entryText'},
             ExpressionAttributeValues: {
                 ":a": entry.entryText,
                 ":b": entry.readyToPublish,

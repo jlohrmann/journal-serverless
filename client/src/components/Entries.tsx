@@ -11,7 +11,8 @@ import {
   Icon,
   Input,
   Image,
-  Loader
+  Loader,
+  GridColumn
 } from 'semantic-ui-react'
 
 import { createEntry, deleteEntry, getEntries, patchEntry } from '../api/entries-api'
@@ -127,7 +128,7 @@ export class Entries extends React.PureComponent<EntriesProps, EntriesState> {
             }}
             fluid
             actionPosition="left"
-            placeholder="Enter a new joural entry..."
+            placeholder="Add a new journal entry..."
             onChange={this.handleEntryTextChange}
           />
         </Grid.Column>
@@ -159,9 +160,15 @@ export class Entries extends React.PureComponent<EntriesProps, EntriesState> {
   renderEntriesList() {
     return (
       <Grid padded>
+        <Grid.Row>
+          <Grid.Column width={3} textAlign="left"><h2>Journal Entry</h2></Grid.Column>
+          <Grid.Column width={10} textAlign="right"><h2>Review Date</h2></Grid.Column>
+          <Grid.Column width={2} textAlign="right"><h2>Edit</h2></Grid.Column>
+        </Grid.Row>
         {this.state.entries.map((entry, pos) => {
           return (
             <Grid.Row key={entry.entryId}>
+              <Grid.Column width={16} textAlign="left">Publish Entry</Grid.Column>
               <Grid.Column width={1} verticalAlign="middle">
                 <Checkbox
                   onChange={() => this.onEntryCheck(pos)}
