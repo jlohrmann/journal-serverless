@@ -62,7 +62,7 @@ export class EntryAccess {
             UpdateExpression: "set #name = :a, done = :b, dueDate = :c",
             ExpressionAttributeNames: {'#name' : 'name'},
             ExpressionAttributeValues: {
-                ":a": entry.entry,
+                ":a": entry.entryText,
                 ":b": entry.readyToPublish,
                 ":c": entry.reviewByDate
             },

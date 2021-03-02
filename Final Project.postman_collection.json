@@ -6,10 +6,10 @@
 	},
 	"item": [
 		{
-			"name": "TODOs",
+			"name": "Entries",
 			"item": [
 				{
-					"name": "Get all todos",
+					"name": "Get all entries",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -24,7 +24,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-west-2.amazonaws.com/dev/todos",
+							"raw": "https://{{apiId}}.execute-api.us-west-2.amazonaws.com/dev/entries",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
@@ -35,14 +35,14 @@
 							],
 							"path": [
 								"dev",
-								"todos"
+								"entries"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Create todo",
+					"name": "Create entry",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -74,14 +74,14 @@
 							],
 							"path": [
 								"dev",
-								"todos"
+								"entries"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Update todo",
+					"name": "Update entry",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -99,10 +99,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Change the world\",\n\t\"dueDate\": \"2019-12-11\",\n\t\"done\": true\n}"
+							"raw": "{\n\t\"entryText\": \"I ate some cheese\",\n\t\"reviewByDate\": \"2019-12-11\",\n\t\"readyToPublish\": true\n}"
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-west-2.amazonaws.com/dev/todos/35dd600f-43c2-4649-903c-615e1586a26f",
+							"raw": "https://{{apiId}}.execute-api.us-west-2.amazonaws.com/dev/entries/35dd600f-43c2-4649-903c-615e1586a26f",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
@@ -113,7 +113,7 @@
 							],
 							"path": [
 								"dev",
-								"todos",
+								"entries",
 								"35dd600f-43c2-4649-903c-615e1586a26f"
 							]
 						}
@@ -121,7 +121,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete todo",
+					"name": "Delete entry",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -142,7 +142,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-west-2.amazonaws.com/dev/todos/fe671583-4512-45f6-9475-4265c04362fb",
+							"raw": "https://{{apiId}}.execute-api.us-west-2.amazonaws.com/dev/entries/fe671583-4512-45f6-9475-4265c04362fb",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
@@ -153,7 +153,7 @@
 							],
 							"path": [
 								"dev",
-								"todos",
+								"entries",
 								"fe671583-4512-45f6-9475-4265c04362fb"
 							]
 						}
@@ -176,7 +176,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-west-2.amazonaws.com/dev/todos/3836b777-9bc4-4429-9b79-ba4e4f5f91c0/attachment",
+							"raw": "https://{{apiId}}.execute-api.us-west-2.amazonaws.com/dev/entries/3836b777-9bc4-4429-9b79-ba4e4f5f91c0/attachment",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
@@ -187,7 +187,7 @@
 							],
 							"path": [
 								"dev",
-								"todos",
+								"entries",
 								"3836b777-9bc4-4429-9b79-ba4e4f5f91c0",
 								"attachment"
 							]

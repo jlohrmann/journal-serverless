@@ -1,5 +1,5 @@
 export interface EntryUpdate {
-  entry: string
+  entryText: string
   reviewByDate: string
   readyToPublish: boolean
 }

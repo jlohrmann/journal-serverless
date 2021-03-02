@@ -13,7 +13,7 @@ The application should store Journal Entries, and each Entry item contains the f
 * `userId` (string) - a unique id for a user 
 * `entryId` (string) - a unique id for an entry item
 * `createdAt` (string) - date and time when an item was created
-* `entry` (string) - journal entry (e.g. "Today I ate cheese")
+* `entryText` (string) - journal entry (e.g. "Today I ate cheese")
 * `reviewByDate` (string) - date and time by which an item should be reviewed for publishing 
 * `readyToPublish` (boolean) - true if an entry has been reviewed and ready to publish
 * `attachmentUrl` (string) (optional) - a URL pointing to an image attached to a journal entry 
@@ -34,15 +34,15 @@ It should return data that looks like this:
     {
       "entryId": "123",
       "createdAt": "2019-07-27T20:01:45.424Z",
-      "entry": "I ate cheese",
+      "entryText": "I ate cheese",
       "reviewByDate": "2019-07-29T20:01:45.424Z",
       "publish": false,
       "attachmentUrl": "http://example.com/image.png"
     },
     {
-      "todoId": "456",
+      "entryId": "456",
       "createdAt": "2019-07-27T20:01:45.424Z",
-      "entry": "Had an interesting conversation about the the cheese I ate",
+      "entryText": "Had an interesting conversation about the the cheese I ate",
       "reviewByDate": "2019-07-29T20:01:45.424Z",
       "publish": true,
       "attachmentUrl": "http://example.com/image.png"
@@ -58,21 +58,21 @@ It receives a new Entry Item to be created in JSON format that looks like this:
 ```json
 {
   "createdAt": "2019-07-27T20:01:45.424Z",
-  "entry": "I ate cheese",
+  "entryText": "I ate cheese",
   "reviewByDate": "2019-07-29T20:01:45.424Z",
   "publish": false,
   "attachmentUrl": "http://example.com/image.png"
 }
 ```
 
-It should return a new TODO item that looks like this:
+It should return a new entry item that looks like this:
 
 ```json
 {
   "item": {
     "entryId": "123",
     "createdAt": "2019-07-27T20:01:45.424Z",
-    "name": "Buy milk",
+    "entryText": "I really liked the cheese I ate",
     "reviewByDate": "2019-07-29T20:01:45.424Z",
     "publish": false,
     "attachmentUrl": "http://example.com/image.png"
@@ -86,7 +86,7 @@ It receives an object that contains three fields that can be updated in a Entry 
 
 ```json
 {
-  "entry": "I wish I had more cheese",
+  "entryText": "I wish I had more cheese",
   "reviewByDate": "2019-07-29T20:01:45.424Z",
   "publish": true
 }
@@ -184,7 +184,7 @@ EntriesTable:
       - AttributeName: sortKey
         KeyType: RANGE
     BillingMode: PAY_PER_REQUEST
-    TableName: ${self:provider.environment.TODOS_TABLE}
+    TableName: ${self:provider.environment.ENTRIES_TABLE}
     LocalSecondaryIndexes:
       - IndexName: ${self:provider.environment.INDEX_NAME}
         KeySchema:
@@ -234,7 +234,7 @@ npm install
 npm run start
 ```
 
-This should start a development server with the React application that will interact with the serverless TODO application.
+This should start a development server with the React application that will interact with the serverless journal entry application.
 
 # Postman collection
 
