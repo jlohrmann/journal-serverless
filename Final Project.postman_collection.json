@@ -60,10 +60,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Water flowers\",\n\t\"dueDate\": \"2019-06-11\"\n}"
+							"raw": "{\n\t\"entryText\": \"I like cheese\",\n\t\"reviewByDate\": \"2021-03-11\"\n}"
 						},
 						"url": {
-							"raw": "https://{{apiId}}.execute-api.us-west-2.amazonaws.com/dev/todos",
+							"raw": "https://{{apiId}}.execute-api.us-west-2.amazonaws.com/dev/entries",
 							"protocol": "https",
 							"host": [
 								"{{apiId}}",
